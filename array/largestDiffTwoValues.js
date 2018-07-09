@@ -31,7 +31,6 @@ const findLargestDifference = arr => {
         if (arr[i] < min) {
             min = arr[i]
         }
-        console.log(maxDiff)
         i++
     }
 
