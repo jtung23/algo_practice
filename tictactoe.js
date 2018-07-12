@@ -159,3 +159,24 @@ checkDiagonalWin = (arr, i, j, val) => {
 // test0, 1, 2, 3, 5 = true, test4 = false
 
 console.log(checkWinner(test4))
+
+// // refactor
+// yeah it seemed to me like it should just have "checkHorizontal(arr)" checkVertical(arr) and checkDiagonal(arr) 
+// and an optimization I would add
+// is possibly something like a "dontCheck" list
+// because you know that
+// like you start horizontally
+// and say you check each one
+// in a 5x5 square
+// in the first row
+// let's say you find that only 1 of those has an X or whatever in it
+// that means that you dont' have to check any of those other ones veritcally
+// because if they don't have an X in them, there's no way to have a full column filled
+// and i think by the same logic you can't have a diagonal 
+// but the logic is a little weirder
+// bc a diagonal has to be
+// 0,0 1,1 2,2 or whatever
+// so in your dontCheck array you'd have to keep both values if you want to be able to eliminate diagonal checking
+// yeah so to summarize i would probably try to write those functions so that they only take two arguments, the array of the board and an array of the dontCheck values
+// and then each funciton would have some logic to use the dontCheck array to skip values
+// and also add dontCheck values when they find something that doesn't have an X in it

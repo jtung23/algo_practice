@@ -1,4 +1,6 @@
-//You are given an array of n+3 elements. All elements of the array are in range 1 to n. And all elements occur once except two numbers which occurs twice. Find the repeating number.
+//You are given an array of n+1, n+2, n+3 elements. All elements of the array are in range 1 to n.
+// And all elements occur once except two numbers which occurs twice. Find the repeating number.
+
 // const testarr = [1, 2,3, 4, 2]
 // n^2 + 
 //   1/2
@@ -35,8 +37,6 @@
     
 //   }
 //   return newArr
-  
-	
   
 // }
 
@@ -101,13 +101,38 @@ const reverse = str => {
   return newStr  
 }
 
-createStr = 'bob'
-newStr = 'is'
-createStr = newStr + ' ' + createStr
-
 reverse(input)
 
+// GEORGE's solution
 
+// Given an input string, reverse all the words. To clarify, input: “Interviews are awesome!” output: . “awesome! are Interviews”
+// Consider all consecutive non-whitespace characters as individual words.
+
+let testInput = "Interviews are awesome!";
+// let output = "awesome! are Interviews";
+
+let i = 0;
+let tempString = '';
+let finalString = '';
+
+while (i < testInput.length) {
+  if (testInput[i] !== ' ') {
+  tempString += testInput[i];
+  if (i === testInput.length -1) {
+  finalString = tempString + ' '+ finalString;
+  }
+  } else {
+  finalString = tempString + ' '+ finalString;
+  tempString = '';
+  }
+  i++;
+}
+
+finalString = finalString.trim();
+it'll only use string
+but if you use an array you can also use unshift
+it's the same as [ush
+push*
 
 
 
